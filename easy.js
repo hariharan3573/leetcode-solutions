@@ -34,25 +34,21 @@
 //     return result
 // };
 
-3300. Minimum Element After Replacement With Digit Sum
+// 
 
-var minElement = function (nums) {
 
-    let n = 0;
-    let sum = 0;
-    let arr = [];
-    let digit = 0
+1431. Kids With the Greatest Number of Candies
 
-    for (let i = 0; i < nums.length; i++) {
-        sum = 0
-        n = nums[i]
-        while (n > 0) {
-            digit = n % 10;
-            sum += digit;
-            n = Math.floor(n / 10);
+
+var kidsWithCandies = function(candies, extraCandies) {
+    let arr=[];
+    let max=Math.max(...candies);
+    for(let i=0;i<candies.length;i++){
+        if(candies[i]+extraCandies>=max){
+            arr.push(true);
+        }else{
+            arr.push(false)
         }
-        arr.push(sum)
     }
-
-    return Math.min(...arr)
-}
+    return arr
+};
